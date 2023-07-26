@@ -33,3 +33,13 @@ class ImageController extends Controller
         'visibility' => 'public',
     ],
 ],
+public function show($imageName)
+    {
+        $imagePath = 'images/' . $imageName;
+        
+        if (Storage::disk('public')->exists($imagePath)) {
+            return response()->file(storage_path('app/public/' . $imagePath));
+        }
+
+        // Handle the case when the image is not found (e.g., return a default image or a 404 response)
+    }
