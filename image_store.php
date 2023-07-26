@@ -33,6 +33,16 @@ class ImageController extends Controller
         'visibility' => 'public',
     ],
 ],
+
+
+
+get image 
+<!-- resources/views/show_image.blade.php -->
+<img src="{{ asset('images/' . $imageName) }}" alt="Uploaded Image">
+
+
+
+
 public function show($imageName)
     {
         $imagePath = 'images/' . $imageName;
